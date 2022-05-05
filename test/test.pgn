@@ -1,0 +1,14 @@
+﻿[Event "?"]
+[Site "?"]
+[Date "2022.5.4"]
+[Round "?"]
+[White "test pgn"]
+[Black "test pgn"]
+[Result "*"]
+[ECO "C29"]
+[Annotator "Iracinder"]
+[PlyCount "31"]
+[EventDate "2010.10.20"]
+[SourceDate "2019.11.28"]
+
+1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. Qf3 Nxc3 *
