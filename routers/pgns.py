@@ -7,11 +7,14 @@ router = APIRouter(prefix="/pgns")
 
 @router.get("/")
 async def list_pgn():
-    return [{"value": pgn.stem, "label": pgn.stem} for pgn in COURSE_LOCATION.glob('*.pgn')]
+    return [pgn.stem for pgn in COURSE_LOCATION.glob('*.pgn')]
 
 
 @router.post("/")
-async def create_pgn(file: UploadFile = File(...)):
-    content = await file.read()
-    (COURSE_LOCATION / file.filename).write_bytes(content)
-    return {"filename": file.filename}
+async def create_pgns(files: list[UploadFile] = File(...)):
+    file_uploaded = []
+    for file in files:
+        content = await file.read()
+        (COURSE_LOCATION / file.filename).write_bytes(content)
+        file_uploaded.append(file.filename)
+    return file_uploaded
